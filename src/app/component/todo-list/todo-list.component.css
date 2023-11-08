@@ -1,0 +1,96 @@
+/* Base styles for the dark theme */
+body {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text for contrast */
+  font-family: Arial, sans-serif; /* Optional: Change as per your preference */
+}
+
+/* Styling the to-do container */
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #1e1e1e; /* Slightly lighter than the body background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container h2 {
+  color: #76ff03; /* Bright accent color for headings */
+}
+
+/* Styling the form and inputs */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2a2a2a; /* Dark input fields */
+  color: #ffffff;
+}
+
+.todo-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #76ff03; /* Bright accent color for the button */
+  color: #121212;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-form button:hover {
+  background-color: #64dd17; /* A slightly darker shade on hover */
+}
+
+/* Styling the to-do list */
+.to-do-list {
+  color: #ffffff;
+  list-style: none;
+  padding: 0;
+}
+
+.to-do-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.to-do-list li:last-child {
+  margin-bottom: 0;
+}
+
+.to-do-list input[type="checkbox"] {
+  accent-color: #76ff03; /* Bright accent color for checkboxes */
+}
+
+.to-do-list span {
+  flex-grow: 1;
+}
+
+.to-do-list .completed {
+  text-decoration: line-through;
+  color: #aaa; /* A lighter text color to signify completion */
+}
+
+/* Styling the remove button */
+.remove-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff1744; /* A bright color for the remove button */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #f01440; /* A slightly darker shade on hover */
+}
