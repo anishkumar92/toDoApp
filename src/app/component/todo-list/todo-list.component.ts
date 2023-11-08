@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/todo.model';
 import { Store } from '@ngrx/store';
 
@@ -6,6 +6,7 @@ import {
   addTodos,
   toggleTodos,
   removeTodos,
+  loadTodos,
 } from 'src/app/store/actions/todo.action';
 
 @Component({
@@ -13,7 +14,7 @@ import {
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   todos$!: Todo[];
   newTodoTitle = '';
   constructor(private store: Store<{ todos: { todos: Todo[] } }>) {
@@ -21,6 +22,10 @@ export class TodoListComponent {
       this.todos$ = todosState.todos;
       console.log(this.todos$);
     });
+  }
+
+  ngOnInit() {
+    this.store.dispatch(loadTodos({ todos: this.todos$ }));
   }
 
   addTodo(): void {

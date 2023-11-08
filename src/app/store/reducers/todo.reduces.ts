@@ -1,5 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { addTodos, toggleTodos, removeTodos } from '../actions/todo.action';
+import {
+  addTodos,
+  toggleTodos,
+  removeTodos,
+  loadTodos,
+} from '../actions/todo.action';
 import { Todo } from './../../models/todo.model';
 
 export interface TodoState {
@@ -7,18 +12,12 @@ export interface TodoState {
 }
 
 export const initialState: TodoState = {
-  todos: [
-    {
-      id: '1',
-      title: 'Todo 1',
-      completed: false,
-      userId: 1,
-    },
-  ],
+  todos: [],
 };
 
 export const TodoReducer = createReducer(
   initialState,
+  on(loadTodos, (state, { todos }) => ({ ...state, todos })),
   on(addTodos, (state, { todo }) => ({
     ...state,
     todos: [...state.todos, todo],
