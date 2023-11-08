@@ -1,3 +1,7 @@
+# toDoApp
+
+This repository contains a sample todo application built with Angular and NGRX for state management.
+
 # Ngrxag16
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
